@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5 
+
+development:
+  <<: *default
+  database: appdb
+  username: app_builder
+  password: password
+  host: localhost
+
+test:
+  <<: *default
+  database: myapp_test
+
+production:
+  <<: *default
+  database: appdb
+  username: app_builder
+  password: password
